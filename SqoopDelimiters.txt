@@ -1,0 +1,23 @@
+sqoop import \
+--connect jdbc:mysql://quickstart.cloudera/hr_db \
+--username root \
+--password cloudera \
+--table departments \
+--warehouse-dir /sqoop/import/ \
+--fields-terminated-by ":" \
+--lines-terminated-by '\n' \
+--delete-target-dir \
+--null-non-string '-1'
+
+sqoop import \
+--connect jdbc:mysql://quickstart.cloudera/hr_db \
+--username root \
+--password cloudera \
+--table employees \
+--warehouse-dir /sqoop/import/ \
+--delete-target-dir \
+--fields-terminated-by "\0001" \
+--lines-terminated-by '\n' \
+--null-non-string '-1111' \
+--null-string "empty field"
+

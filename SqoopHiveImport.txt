@@ -1,0 +1,72 @@
+sqoop import \
+--connect jdbc:mysql://quickstart.cloudera/retail_db \
+--username root \
+--password cloudera \
+--table orders \
+--hive-import \
+--hive-database hive_retail_db \
+--hive-table orders \
+--num-mappers 4
+
+sqoop import \
+--connect jdbc:mysql://quickstart.cloudera/retail_db \
+--username root \
+--password cloudera \
+--table order_items \
+--hive-import \
+--hive-table hive_retail_db1.order_items \
+-m 2
+
+Hive import by default appends data to existing ones
+sqoop import \
+--connect jdbc:mysql://quickstart.cloudera/retail_db \
+--username root \
+--password cloudera \
+--table order_items \
+--hive-import \
+--hive-database hive_retail_db \
+--hive-table order_items \
+--num-mappers 3
+
+If you want to overwrite existing table uding hive import
+sqoop import \
+--connect jdbc:mysql://quickstart.cloudera/retail_db \
+--username root \
+--password cloudera \
+--table order_items \
+--hive-import \
+--hive-table hive_retail_db.order_items \
+--hive-overwrite \
+--num-mappers 2
+
+sqoop import \
+--connect jdbc:mysql://quickstart.cloudera/retail_db \
+--username root \
+--password cloudera \
+--table orders \
+--hive-import \
+--hive-table hive_retail_db.orders \
+--create-hive-table \
+--num-mappers 3
+
+
+
+--------------------------------------------------------
+
+sqoop import-all-tables \
+--connect jdbc:mysql://quickstart.cloudera/retail_db \
+--username root \
+--password cloudera \
+--warehouse-dir /sqoop/import-all/ \
+--autoreset-to-one-mapper
+
+sqoop import-all-tables \
+--connect jdbc:mysql://quickstart.cloudera/hr_db \
+--username root \
+--password cloudera \
+--warehouse-dir /sqoop/import/hr_db \
+--exclude-tables locations,regions,employees,departments,jobs \
+--autoreset-to-one-mapper
+
+
+
