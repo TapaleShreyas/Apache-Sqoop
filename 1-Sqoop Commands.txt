@@ -32,7 +32,6 @@ sqoop eval \
 --password cloudera \
 --query "insert into dummy values('Shreyas')"
 
-
 sqoop eval \
 --connect jdbc:mysql://192.168.100.137/retail_db \
 --username root \

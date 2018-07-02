@@ -7,6 +7,7 @@ sqoop import \
 --delete-target-dir \
 --split-by order_customer_id
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Load the data based on some condition and append to existing directory
 sqoop import \
@@ -18,6 +19,8 @@ sqoop import \
 --split-by order_status \
 --append
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Where clause in conjuction with table
 sqoop import \
 --connect jdbc:mysql://quickstart.cloudera:3306/retail_db \
@@ -28,6 +31,7 @@ sqoop import \
 --table orders \
 --where "order_date like '2014-01-%'" 
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Incremental append using argument specific to incremental load
 sqoop import \
@@ -40,6 +44,7 @@ sqoop import \
 --incremental append \
 --last-value '2014-02-28'
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 
 sqoop import \
 --connect jdbc:mysql://quickstart.cloudera/retail_db \
@@ -48,6 +53,8 @@ sqoop import \
 --table orders \
 --where 'order_date like "2013-12-%"' \
 --warehouse-dir /sqoop/import/
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 
 sqoop import \
 --connect jdbc:mysql://quickstart.cloudera/retail_db \
@@ -59,3 +66,4 @@ sqoop import \
 --last-value '2013-12-28' \
 --warehouse-dir /sqoop/import/
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------
