@@ -29,7 +29,7 @@ sqoop import \
 --username root \
 --password cloudera \
 --table order_items \
---target-dir /sqoop/import/retail_db/order_items
+--target-dir /sqoop/import/retail_db/order_items_dir
 
 -------------------------------------------------------------------------------------------------------------------------
 
@@ -42,7 +42,7 @@ sqoop import \
 --username root \
 --password cloudera \
 --table order_items \
---target-dir /sqoop/import/retail_db/order_items \
+--target-dir /sqoop/import/retail_db/order_items_dir \
 --num-mappers 1 \
 --delete-target-dir
 
@@ -56,7 +56,7 @@ sqoop import \
 --username root \
 --password cloudera \
 --table order_items \
---target-dir /sqoop/import/order_items \
+--target-dir /sqoop/import/order_items_dir \
 --num-mappers 1 \
 --append
 
