@@ -15,9 +15,9 @@ sqoop import \
 --table order_items \
 --hive-import \
 --hive-table hive_retail_db1.order_items \
--m 2
+--m 2
 
-Hive import by default appends data to existing ones
+# Hive import by default appends data to existing ones
 sqoop import \
 --connect jdbc:mysql://quickstart.cloudera/retail_db \
 --username root \
@@ -28,7 +28,7 @@ sqoop import \
 --hive-table order_items \
 --num-mappers 3
 
-If you want to overwrite existing table uding hive import
+If you want to overwrite the existing table using hive import
 sqoop import \
 --connect jdbc:mysql://quickstart.cloudera/retail_db \
 --username root \
@@ -51,7 +51,7 @@ sqoop import \
 
 
 
---------------------------------------------------------
+# --------------------------------------------------------
 
 sqoop import-all-tables \
 --connect jdbc:mysql://quickstart.cloudera/retail_db \

@@ -1,14 +1,15 @@
-#### USE OF DELIMITERS IN SQOOP ####
+:'
+	USE OF DELIMITERS IN SQOOP
 	- Use ( --fields-terminated-by fields_seperator_in double_quotes ) syntax to specify field seperator
-	- Use ( --lines-terminated-by fields_seperator_in double_quotes ) syntax to specify line seperator
+	- Use ( --lines-terminated-by fields_seperator_in double_quotes ) syntax to specify line seperator'
 
-#### TREAT NULL VALUES ####
-	
+:'
+	TREAT NULL VALUES
 	- For string column use ( -- null-string string-to_replace_null) e.g. --null-string "empty field"
-	- For numeric column use ( --null-non-string numeric_value_to_replace_null ) e.g.  --null-non-string '-1'
+	- For numeric column use ( --null-non-string numeric_value_to_replace_null ) e.g.  --null-non-string '-1''
 
 
---------------------------------------------------------------------------------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 sqoop import \
 --connect jdbc:mysql://quickstart.cloudera/hr_db \
@@ -21,7 +22,7 @@ sqoop import \
 --delete-target-dir \
 --null-non-string '-1'
 
---------------------------------------------------------------------------------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 sqoop import \
 --connect jdbc:mysql://quickstart.cloudera/hr_db \
@@ -35,5 +36,5 @@ sqoop import \
 --null-non-string '-1111' \
 --null-string "empty field"
 
---------------------------------------------------------------------------------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------------------------------------------------------------------------
 

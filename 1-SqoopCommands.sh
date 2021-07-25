@@ -1,3 +1,5 @@
+### SIMPLE SQOOP COMMANDS ###
+
 sqoop list-databases \
 --connect jdbc:mysql://192.168.100.137:3306 \
 --username root \
