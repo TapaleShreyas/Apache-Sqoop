@@ -28,7 +28,7 @@ sqoop import \
 --hive-table order_items \
 --num-mappers 3
 
-If you want to overwrite the existing table using hive import
+# If you want to overwrite existing table using hive import
 sqoop import \
 --connect jdbc:mysql://quickstart.cloudera/retail_db \
 --username root \

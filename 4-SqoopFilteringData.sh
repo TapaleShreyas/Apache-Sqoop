@@ -14,6 +14,8 @@ sqoop import \
 --delete-target-dir \
 --boundary-query 'select min(order_item_id), max(order_item_id) from order_items where order_item_id > 99999'
 
+# -------------------------------------------------------------------------------------------------------------------------
+
 sqoop import \
 --connect jdbc:mysql://quickstart.cloudera/retail_db \
 --username root \
@@ -24,3 +26,40 @@ sqoop import \
 --boundary-query 'select 100000, 172198'
 
 # -------------------------------------------------------------------------------------------------------------------------
+
+sqoop import \
+--connect jdbc:mysql://quickstart.cloudera/retail_db \
+--username root \
+--password cloudera \
+--warehouse-dir /import/retail_db/boundary_query/ \
+--table customers \
+--boundary-query "select 500, 700" \
+--delete-target-dir
+
+# -------------------------------------------------------------------------------------------------------------------------
+
+sqoop import \
+--connect jdbc:mysql://quickstart.cloudera/retail_db \
+--username root \
+--password cloudera \
+--warehouse-dir /import/retail_db/boundary_query/ \
+--append \
+--table customers \
+--boundary-query "select min(customer_id), max(customer_id) from customers where customer_id > 300 and customer_id <= 500"
+
+# -------------------------------------------------------------------------------------------------------------------------
+
+// Appending zero records 
+sqoop import \
+--connect jdbc:mysql://quickstart.cloudera/retail_db \
+--username root \
+--password cloudera \
+--warehouse-dir /import/retail_db/boundary_query/ \
+--table customers \
+--columns customer_id,customer_fname,customer_lname,customer_email \
+--boundary-query "select 200, 300" \
+--where "customer_id > 500 and customer_id <= 600" \
+--append
+
+# -------------------------------------------------------------------------------------------------------------------------
+
