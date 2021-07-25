@@ -14,7 +14,18 @@
 <p><strong>Repository contains</strong></p>
 <ul>
 <li>Sample set of databases under <code>database</code> directory.</li>
-<li>Sqoop command files arranged in sequenctial order.</li>
+<li>Sqoop command files arranged in sequenctial order.
+<ul>
+<li>Sqoop basic commands</li>
+<li>Sqoop Imports</li>
+<li>Sqoop File formats</li>
+<li>Sqoop Filtering</li>
+<li>Sqoop Delimiters</li>
+<li>Sqoop Incremental loads</li>
+<li>Sqoop Hive Import</li>
+<li>Sqoop Hive Export</li>
+</ul>
+</li>
 </ul>
 <p>This repository gives you the good hands on and the brush up for <a href="https://sqoop.apache.org/docs/1.4.7/SqoopUserGuide.html#_introduction">Apache Sqoop</a>.</p>
 </div>
